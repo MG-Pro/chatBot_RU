@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Diet Consultant</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/snap.svg-min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader active">
+  <svg class="load-animation" viewBox="0 0 500 500">
+    <desc>Created with Snap</desc>
+    <defs></defs>
+    <circle cx="250" cy="240" r="600" fill="#bde044" style=""></circle>
+    <circle cx="250" cy="240" r="600" fill="#bde044" style=""></circle>
+    <circle cx="250" cy="240" r="0" fill="#bde044" style=""></circle>
+  </svg>
+  <div class="preloader__holder">
+    
+    <img src="img/logo_big.png" class="preloader__img">
+    <p class="preloader__head">Diet Consultant</p>
+  </div>
+</div>
+<div class="wrapper">
+  <main class="content">
+    <header class="header">
+      <div class="container">
+        <div class="title">
+          <div class="title__logo-wrap">
+            <img src="img/logo.png" class="title__logo">
+          </div>
+          <div class="title__text-wrap ">
+            <p class="title__text active">Diet Consultant</p>
+            <p class="title__text">Подбор программы</p>
+          </div>
+          <!--<button style="float: left; padding: 10px">fffff</button>-->
+        </div>
+      </div>
+    </header>
+    <div class="layout" id="layout">
+      <div class="start-block">
+        <div class="start-block__ava">
+          <div class="start-block__ava-holder">
+            <img src="img/ava.jpg" class="start-block__ava-img">
+          </div>
+        </div>
+        <p class="start-block__head">Привет! Меня зовут Селена
+          и я профессиональный диетолог</p>
+        <img src="img/start.jpg" class="start-block__img">
+        <p class="start-block__msg">Ответьте на несколько вопросов и я назову ваш идеальный вес и скажу как легко его достичь!</p>
+        <button class="start-block__btn"> Поехали?</button>
+      </div>
+    </div>
+    <div class="message-form">
+      <div class="container">
+        <form action="" class="message-form-form">
+          <div class="message-form-hint">Напишите сообщение...</div>
+          <input type="text" class="message-form__input " placeholder="Напишите сообщение...">
+          <button class="message-form__btn"></button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="data" hidden>
+  <p data-id="msg1">
+    <span class="msg">Привет! Меня зовут Селена и я профессиональный диетолог. Я разработала уникальную систему похудения и хочу ей поделиться. Ответьте на несколько вопросов и я назову ваш идеальный вес, подберу режим питания и частоту физических нагрузок. Поехали? <img
+      src="img/smiles/D83DDE80.png" alt="🚀" class="smile">
+     </span>
+  </p>
+  <p data-id="msg2" data-query="name">
+    <span class="msg">Как я могу к вам обращаться?</span>
+    <span class="hint">Введите ваше имя</span>
+  </p>
+  <p data-id="msg3" data-type="question" data-query="gender">
+    <span class="msg">Вы:</span>
+    <span class="question-var" data-value="male">Мужчина</span>
+    <span class="question-var" data-value="female">Женщина</span>
+  </p>
+  <p data-id="msg4" data-gender="male" data-query="age">
+    <span class="msg">По статистике мужчины начинают полнеть после 33 лет. А сколько лет Вам?</span>
+    <span class="hint">Введите ваш возраст</span>
+  </p>
+  <p data-id="msg5" data-gender="female" data-query="age">
+    <span class="msg">По статистике женщины начинают полнеть после 33 лет. А сколько лет Вам?</span>
+    <span class="hint">Введите ваш возраст</span>
+  </p>
+  <p data-id="msg6" data-query="height">
+    <span class="msg">И рост. Да-да! Мне все про вас интересно! <img src="img/smiles/D83DDE09.png" alt="😉" class="smile"></span>
+    <span class="hint">Введите ваш рост в сантиметрах</span>
+  </p>
+  <p data-id="msg7" data-query="weight">
+    <span class="msg">
+    <span class="height"></span> см.
+    Принято! <span class="name"></span>, как часто вы взвешиваетесь? Сколько весы показывали в последний раз?</span>
+    <span class="hint">Введите ваш вес в килограммах</span>
+  </p>
+  <p data-id="msg8" data-gender="female">
+    <span class="msg">Мне кажется, я уже догадалась, но надо уточнить. Укажите свой тип фигуры</span>
+  </p>
+  <p
+    data-id="msg8"
+    data-gender="female"
+    data-type="question-body-type"
+  >
+    <img src="img/lady1.png">
+    <img src="img/lady2.png">
+    <img src="img/lady3.png">
+  </p>
+  <p data-id="msg9" data-gender="female" data-type="question">
+    <span class="msg">Я так и думала! <span class="name"></span>, вы знаете что с вашим типом фигуры не стоит сидеть на диетах? Вес, сброшенный при голодании, возвращается в течении месяца. Я надеюсь вы не любительница диет?</span>
+    <span class="question-var">Может пробовала пару раз</span>
+    <span class="question-var">Иногда я сижу на диетах</span>
+    <span class="question-var">Сижу на диетах несколько раз в месяц</span>
+    <span class="question-var">Я сейчас на диете <img src="img/smiles/D83DDE14.png" alt="😪" class="smile"></span>
+  </p>
+  <p data-id="msg10" data-gender="female">
+    <img src="img/msg_1.jpg">
+  </p>
+  <p
+    data-id="msg11"
+    data-gender="female"
+    data-type="question"
+  >
+    <span class="msg">Так-так… А что насчет физической активности? Посещаете тренажерный зал?</span>
+    <span class="question-var">Нет, я много сижу и мало двигаюсь</span>
+    <span class="question-var">Я стараюсь больше ходить пешком, но не всегда получается</span>
+    <span class="question-var">Я делаю зарядку и бегаю по утрам</span>
+    <span class="question-var">Несколько раз в неделю хожу в спортзал</span>
+  </p>
+  <p data-id="msg12" data-gender="female">
+    <img src="img/msg_2.jpg">
+  </p>
+  <p data-id="msg13" data-gender="female" data-type="question" data-agebefore="35">
+    <span class="msg">Если честно, то спорт не гарантирует похудение. Физические упражнения укрепят мышцы, но не сожгут много жира. Зато на вес может повлиять гормональный фон. <span
+      class="name"></span>, как вы чувствуете себя во время ПМС?</span>
+    <span class="question-var">Я много ем и очень раздражена</span>
+    <span class="question-var">Хочется лежать дома и никуда не выходить</span>
+    <span class="question-var">Чувствую себя как обычно</span>
+    <span class="question-var">ЧТООО?</span>
+  </p>
+  <p data-id="msg13" data-gender="female" data-type="question">
+    <span class="msg">Если честно, то спорт не гарантирует похудение. Физические упражнения укрепят мышцы, но не сожгут много жира. Зато на вес может повлиять гормональный фон. Вы чувствуете что с возрастом стали полнеть?</span>
+    <span class="question-var">Да, с каждым годом я прибавляю по несколько килограмм</span>
+    <span class="question-var">Я и раньше была тучной</span>
+    <span class="question-var">Вес стал тяжелее уходить</span>
+    <span class="question-var">С возрастом я не меняюсь</span>
+  </p>
+  <p data-id="msg14" data-gender="female" data-agebefore="35">
+    <span class="msg"></span>
+    <img src="img/msg_3.gif">
+  </p>
+  <p data-id="msg14" data-gender="female">
+    <span class="msg"></span>
+    <img src="img/msg_11.gif">
+  </p>
+  <p data-id="msg15" data-gender="female">
+    <span class="msg">Мы уже на финишной прямой! еще пара вопросов. На какой фотографии я лучше получилась?))</span>
+    <img src="img/msg_4.jpg">
+  </p>
+  <p data-id="msg16" data-gender="female" data-query="loseweight">
+    <span class="msg">Да, я стала диетологом чтобы привести в порядок свое тело. Так что о похудении знаю все. С помощью своей системы я избавилась от 37 кг. <span class="name"></span>, а сколько килограмм вы бы хотели сбросить?</span>
+    <span class="hint">введите число в килограммах</span>
+  </p>
+  <p data-id="msg17" data-gender="female">
+    <span class="msg">Отлично. Теперь дайте мне несколько секунд...</span>
+    <img src="img/msg_5.gif">
+  </p>
+  <p data-id="msg18" data-gender="female" data-timeout="5">
+    <span class="msg">Готово! Исходя из ваших данных у меня есть для вас несколько советов.</span>
+  </p>
+  <p data-id="msg19" data-gender="female">
+    <span class="msg"><span class="name"></span>, помните что я говорила про диеты? Диеты и голодание зло! Обязательно нужно есть! Резкая смена пищевого поведения вообще может привести к гормональному сбою…</span>
+    <img src="img/msg_6.jpg">
+  </p>
+  <p data-id="msg20" data-gender="female" data-timeout="5">
+    <span class="msg">Спортзал поможет поддержать форму, но не поможет сбросить вес.</span>
+  </p>
+  <p data-id="msg21" data-gender="female">
+    <span class="msg">И самое главное! Вода важнее еды. В течении дня вы должны выпивать как минимум три стакана жидкости. Первый - утром натощак, второй в обед и третий на ночь, перед сном. Но тут есть один секрет</span>
+  </p>
+  <p data-id="msg22" data-gender="female" data-timeout="5">
+    <img src="img/prod.jpg">
+  </p>
+  <p data-id="msg23" data-gender="female">
+    <span class="msg">Для того чтобы быстрее сбросить <span class="loseweight"></span> кг добавьте в воду несколько капель <a href="" class="link">Eco Slim</a>. Это моя находка.</span>
+  </p>
+  <p data-id="msg24" data-gender="female" data-timeout="5">
+    <span class="msg"><a href="" class="link">Eco Slim</a> это специальная добавка которая помогает худеть. Снижает аппетит и запускает процесс жиросжигания.</span>
+  </p>
+  <p data-id="msg25" data-gender="female">
+    <span class="msg">Аминокислоты и белки, входящие в состав <a href="" class="link">Eco Slim</a>, ускоряют метаболизм и начинают бороться с жировыми отложениями сразу, как только попадают в организм. Благодаря этому похудение будет быстрым и безвредным.</span>
+  </p>
+  <p data-id="msg26" data-gender="female" data-timeout="5">
+    <span class="msg">Для тех кто дошел до конца - приятный бонус, скидка 50% <a href="" class="link">по этой ссылке</a></span>
+  </p>
+  <p data-id="msg27" data-gender="female" data-end>
+    <span class="msg">Удачи! Худейте с умом!</span>
+  </p>
+  <p data-id="msg28" data-gender="male" data-query="sleeptime">
+    <span class="msg">А вы знаете что недосып у мужчин резко тормозит обмен веществ? Сколько часов в сутки вы обычно спите?</span>
+    <span class="hint">Введите количество часов</span>
+  </p>
+  <p data-id="msg29" data-gender="male" data-type="question">
+    <span class="msg"><span class="name"></span>, с таким режимом очень важно правильно питаться. Мужчине вашей комплекции необходимо минимум 2500 ккал в сутки. Напишите из каких продуктов обычно состоит ваш рацион?</span>
+    <span class="question-var">Мясо, много вкусного жирного мяса!</span>
+    <span class="question-var">Не думаю об этом. Ем что придется</span>
+    <span class="question-var">Стараюсь правильно питаться, есть меньше жирного и сладкого</span>
+  </p>
+  <p data-id="msg30" data-gender="male">
+    <img src="img/msg_8.gif">
+  </p>
+  <p data-id="msg31" data-gender="male" data-type="question">
+    <span class="msg">Так-так… А что насчет физической активности? Посещаете тренажерный зал? <img src="img/smiles/D83DDCAA.png" alt="💪" class="smile"></span>
+    <span class="question-var">Нет, я много сижу и мало двигаюсь</span>
+    <span class="question-var">Я стараюсь больше ходить пешком, но не всегда получается</span>
+    <span class="question-var">Я делаю зарядку и бегаю по утрам</span>
+    <span class="question-var">Несколько раз в неделю хожу в спортзал</span>
+  </p>
+  <p data-id="msg32" data-gender="male">
+    <img src="img/msg_9.jpg">
+  </p>
+  <p data-id="msg33" data-gender="male">
+    <span class="msg">Если честно, то спорт не гарантирует похудение. Физические упражнения укрепят мышцы, но не сожгут много жира. А вот регулярные занятия сексом помогут быстро
+    прийти в форму за счет дополнительного выброса гормонов ;)</span>
+  </p>
+  <p data-id="msg34" data-gender="male" data-type="question">
+    <span class="msg"><span class="name"></span>, как часто вы занимаетесь сексом? <img src="img/smiles/D83DDD25.png" alt="🔥" class="smile"></span>
+    <span class="question-var">каждый день, я зверь в постели</span>
+    <span class="question-var">Несколько раз в неделю</span>
+    <span class="question-var">Несколько раз в месяц</span>
+    <span class="question-var">Forever alone <img src="img/smiles/D83DDE13.png" alt="😓" class="smile"></span>
+  </p>
+  <p data-id="msg35" data-gender="male">
+    <img src="img/msg_10.gif">
+  </p>
+  <p data-id="msg36" data-gender="male">
+    <span class="msg">Мы уже на финишной прямой! еще пара вопросов. Кого из этих двух девушек вы бы пригласили на свидание?))</span>
+    <img src="img/msg_4.jpg">
+  </p>
+  <p data-id="msg37" data-gender="male" data-query="loseweight">
+    <span class="msg">Обе фотографии мои Да, я стала диетологом чтобы привести в порядок свое тело. Так что о похудении знаю все. С помощью своей системы я избавилась от 37 кг. Скажите, а сколько килограмм вы бы хотели сбросить?</span>
+    <span class="hint">Введите число в килограммах</span>
+  </p>
+  <p data-id="msg38" data-gender="male">
+    <span class="msg">Отлично. Теперь дайте мне несколько секунд...</span>
+  </p>
+  <p data-id="msg39" data-gender="male" data-timeout="5">
+    <span class="msg">Готово! Исходя из ваших данных у меня есть для вас несколько советов.</span>
+  </p>
+  <p data-id="msg40" data-gender="male">
+    <span class="msg"><span class="name"></span>, помните что я говорила про питание? Диеты и голодание зло! Мужчине обязательно нужно есть! Резкая смена пищевого поведения вообще может привести к гормональному сбою и проблемам с потенцией… Хотите начать худеть - чаще занимайтесь сексом</span>
+    <img src="img/msg_6.jpg">
+  </p>
+  <p data-id="msg41" data-gender="male" data-timeout="5">
+    <span class="msg">Спортзал поможет скорректировать фигуру, но не поможет сбросить вес. </span>
+  </p>
+  <p data-id="msg42" data-gender="male">
+    <span class="msg">И самое главное! Вода важнее еды. В течении дня вы должны выпивать как минимум три стакана жидкости. Первый - утром натощак, второй в обед и третий на ночь, перед сном. Но тут есть один секрет</span>
+  </p>
+  <p data-id="msg43" data-gender="male" data-timeout="5">
+    <span class="msg"></span>
+    <img src="img/prod.jpg">
+  </p>
+  <p data-id="msg44" data-gender="male">
+    <span class="msg">Для того чтобы быстрее сбросить <span class="loseweight"></span> кг добавьте в воду несколько капель <a href="" class="link">Product</a>. Это моя находка.</span>
+  </p>
+  <p data-id="msg45" data-gender="male" data-timeout="5">
+    <span class="msg"><a href="" class="link">Product</a> это специальная добавка которая помогает худеть. Снижает аппетит и запускает процесс жиросжигания. Кроме того она дает дополнительную энергию и увеличивает сексуальную активность.</span>
+  </p>
+  <p data-id="msg46" data-gender="male">
+    <span class="msg">Аминокислоты и белки, входящие в состав <a href="" class="link">Product</a>, ускоряют метаболизм и начинают бороться с жировыми
+      отложениями сразу, как только попадают в организм. Благодаря этому похудение будет быстрым и безвредным.</span>
+  </p>
+  <p data-id="msg47" data-gender="male" data-timeout="5">
+    <span class="msg">Для тех кто дошел до конца - приятный бонус, скидка 50% <a href="" class="link">по этой ссылке</a></span>
+  </p>
+  <p data-id="msg48" data-gender="male" data-end>
+    <span class="msg">Удачи! Худейте с удовольствием!</span>
+  </p>
+  <p data-id="msg49" data-gender="female" data-type="waiting">
+    <span class="msg">Ку-ку! Мы с этим красавчиком ждем ваш ответ!</span>
+    <img src="img/msg_help_1.jpg">
+  </p>
+  <p data-id="msg50" data-gender="female" data-type="waiting">
+    <span class="msg">Рене Зеллвегер смогла похудеть на 15 кг! У вас тоже получится!</span>
+    <img src="img/msg_help_3.jpg">
+  </p>
+  <p data-id="msg51" data-gender="male" data-type="waiting">
+    <span class="msg">Зак Галифианакис смог похудеть на 18 кг! У вас тоже получится!
+</span>
+    <img src="img/msg_help_5.jpg">
+  </p>
+  <p data-id="msg52" data-type="waiting">
+    <img src="img/msg_help_4.gif">
+  </p>
+  <p data-id="msg54" data-gender="male" data-type="waiting">
+    <span class="msg">Ку-ку! Мы с этой красоткой ждем ваш ответ!</span>
+    <img src="img/msg_help_2.jpg"></p>
+  <p data-id="msg55" data-type="isright">
+    <span class="msg">А если честно?)</span>
+  </p>
+  <p data-id="msg55" data-type="isright">
+    <span class="msg">Не думаю)</span>
+  </p>
+  <p data-id="msg55" data-type="isright">
+    <span class="msg">Давайте начистоту)</span>
+  </p>
+  <p data-id="msg55" data-type="isright">
+    <span class="msg">Мне кажется вы шутите<img src="img/smiles/D83DDE09.png" alt="😉" class="smile"></span>
+  </p>
+  <p data-id="msg56" data-type="helper">
+    <span class="msg">Выберите подходящий вариант</span>
+  </p>
+  <p data-id="msg57" data-type="helper">
+    <span class="msg">Напишите сообщение...</span>
+  </p>
+  <p data-id="msg58" data-type="waiting">
+    <img src="img/msg_help_6.gif">
+  </p>
+  <p data-id="msg59" data-type="waiting">
+    <img src="img/msg_help_7.gif">
+  </p>
+  <p data-id="msg60" data-type="waiting">
+    <img src="img/msg_help_8.gif">
+  </p>
+  <p data-id="msg57" data-type="helper-end">
+    <span class="msg">Рада была помочь!</span>
+  </p>
+  <p data-id="msg57" data-type="helper-end">
+    <span class="msg">У вас все получится!</span>
+  </p>
+  <p data-id="msg57" data-type="helper-end">
+    <span class="msg">Пока!</span>
+  </p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
